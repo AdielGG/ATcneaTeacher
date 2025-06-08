@@ -26,6 +26,8 @@ func handleEvent(user *variables.User, evt variables.EventRequest) {
 	case "hand-up":
 		events.HandUp(user)
 
+	case "set-screen":
+		events.SetScreen(evt)
 	default:
 		user.Send <- []byte(`{"error": "Evento no reconocido"}`)
 	}

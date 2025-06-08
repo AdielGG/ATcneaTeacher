@@ -1,7 +1,7 @@
 <template>
-    <div class="p-6 max-w-2xl mx-auto bg-white rounded-xl shadow-md space-y-6">
+    <div class="p-6 w-full h-full bg-white shadow-md space-y-6">
         <div>
-            <h2 class="text-xl font-bold text-gray-800">Objetivos</h2>
+            <h2 class="text-xl font-bold text-gray-800">Contenidos</h2>
             <ul class="list-disc list-inside text-gray-700 mt-2">
                 <li v-for="(item, index) in objectives" :key="index">
                     {{ item }}
@@ -37,13 +37,6 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-
-const isURL = (str: string): boolean => {
-    try {
-        const url = new URL(str);
-        return ["http:", "https:"].includes(url.protocol);
-    } catch (_) {
-        return false;
-    }
-};
 </script>
+
+<style></style>

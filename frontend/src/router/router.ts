@@ -3,6 +3,7 @@ import SubjectsView from "../views/SubjectsView.vue";
 import ClassesView from "../views/ClassesView.vue";
 import ClassroomView from "../views/ClassroomView.vue";
 import ClassCover from "../views/Class/ClassCover.vue";
+import Objectives from "../views/Class/Objectives.vue";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
         path: "",
         name: "ClassCover",
         component: ClassCover,
+      },
+      {
+        path: "/obj",
+        name: "ClassObjetive",
+        component: Objectives,
       },
     ],
   },

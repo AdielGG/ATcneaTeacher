@@ -23,7 +23,7 @@
                         alt="Logo"
                         class="h-8 w-8"
                     />
-                    <span class="font-bold text-lg">Aula Tecnológica</span>
+                    <span class="font-bold text-lg">XAUCE ATcnea</span>
                 </div>
                 <!-- <div class="flex items-center gap-4">
           <router-link to="/" class="mr-4 text-blue-600 underline">Asignaturas</router-link>
@@ -54,6 +54,8 @@ import FileSendModal from "./components/modals/FileSendModal.vue";
 import ShowNotificatios from "./components/modals/ShowNotificatios.vue";
 import Notification from "./components/Notificacion.vue";
 
+const socket = new WebSocket("ws://localhost:8080/ws");
+
 const notifier = ref(null);
 const drawerVisible = ref(false);
 const mostrarListaUsuarios = ref(false);
@@ -76,6 +78,7 @@ const cambiarMostrarListaUsuarios = () => {
 provide("mostrarEnviarArchivo", cambiarMostrarEnviarArchivo);
 provide("mostrarListaUsuarios", cambiarMostrarListaUsuarios);
 provide("mostrarNotificacion", cambiarMostrarNotificacion);
+provide("socket", socket);
 
 function toggleDrawer() {
     drawerVisible.value = !drawerVisible.value;

@@ -14,17 +14,27 @@
 
 <script setup>
 import { inject } from "vue";
+import { useRouter } from "vue-router";
 
 const mostrarListaUsuarios = inject("mostrarListaUsuarios");
 const mostrarEnviarArchivo = inject("mostrarEnviarArchivo");
 const mostrarNotificacion = inject("mostrarNotificacion");
+const socket = inject("socket");
+
+const router = useRouter();
 
 const acciones = [
     {
         nombre: "Informacion",
         icono: "book-information-variant",
         accion: function () {
-            console.log("Informacion");
+            router.push({ name: "ClassCover" });
+            socket.send(
+                JSON.stringify({
+                    event: "set-screen",
+                    data: { screen: "inicio" },
+                }),
+            );
         },
     },
     {

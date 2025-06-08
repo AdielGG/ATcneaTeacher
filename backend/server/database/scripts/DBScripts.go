@@ -14,7 +14,6 @@ func EjecuteScripts(db *sql.DB) {
 			id INTEGER PRIMARY KEY ,
 			nombre TEXT NOT NULL,
 			apellidos TEXT NOT NULL,
-			email TEXT NOT NULL UNIQUE,
 			usuario TEXT NOT NULL UNIQUE,
 			password TEXT NOT NULL
 		);

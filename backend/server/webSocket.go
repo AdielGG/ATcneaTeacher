@@ -1,6 +1,7 @@
 package server
 
 import (
+	"app-profesor/backend/server/auth"
 	"app-profesor/backend/server/variables"
 	"log"
 	"net"
@@ -12,6 +13,8 @@ import (
 
 func StartWebSocketServer() {
 	http.HandleFunc("/ws", handleConnections)
+	http.HandleFunc("/auth/login", auth.Login)
+	http.HandleFunc("/auth/signup", auth.Register)
 
 	// Obtener IP local
 	ifaces, _ := net.Interfaces()

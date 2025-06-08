@@ -19,7 +19,6 @@ func InitDB() {
 	if err != nil {
 		log.Fatal("Error de conexión:", err)
 	}
-	defer DB.Close()
 
 	// Verificar conexión
 	err = DB.Ping()

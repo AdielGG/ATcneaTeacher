@@ -5,17 +5,23 @@
         <p class="text-gray-600">{{ objective }}</p>
         <h2 class="text-lg font-semibold text-gray-700">Descripción</h2>
         <p class="text-gray-600">{{ description }}</p>
+        <RouterLink to="/obj" class="bg-blue-700 rounded-4xl decoration-0"
+            >Next</RouterLink
+        >
     </div>
 </template>
 
 <script lang="ts" setup>
 import { defineProps } from "vue";
+import router from "../../router/router";
 
 interface Props {
     title: string;
     objective: string;
     description: string;
 }
+
+function Next() {}
 
 const props = defineProps<Props>();
 </script>

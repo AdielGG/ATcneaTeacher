@@ -2,9 +2,9 @@ package models
 
 type Usuario struct {
 	ID        int    `json:"id"`
-	Nombre    string `json:"nombre"`
-	Apellidos string `json:"apellidos"`
-	Email     string `json:"email"`
-	Usuario   string `json:"usuario"`
+	Nombre    string `json:"name"`
+	Apellidos string `json:"last_name"`
+	Usuario   string `json:"username"`
 	Password  string `json:"password"`
+	Img       string `json:"porfile_image"`
 }

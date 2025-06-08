@@ -2,6 +2,7 @@ package main
 
 import (
 	"app-profesor/backend/server"
+	"app-profesor/backend/server/auth"
 	"app-profesor/backend/server/database"
 	"app-profesor/backend/streaming"
 	"embed"
@@ -22,7 +23,7 @@ func main() {
 
 	// Create an instance of the app structure
 	app := NewApp()
-	auth := &server.Auth{}
+	auth := &auth.Auth{}
 	str := streaming.NewPDFStream()
 	fsr := streaming.NewFileStream()
 

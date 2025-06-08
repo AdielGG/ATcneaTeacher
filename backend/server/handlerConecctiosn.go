@@ -21,9 +21,9 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 	defer conn.Close()
 
 	data, err := json.Marshal(variables.ClasInfo{
-		Name:    "testing",
-		Teacher: "Ivaldi",
-		Color:   "#FF5733FF",
+		Name:    "Clase en prubas",
+		Teacher: "Julio",
+		Color:   "#225733FF",
 	})
 
 	msg, err := json.Marshal(variables.EventMessage{
@@ -32,7 +32,7 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 		Data:   string(data),
 	})
 
-	fmt.Print(string(msg))
+	fmt.Print()
 	conn.WriteMessage(websocket.TextMessage, msg)
 
 	ar := conn.LocalAddr()
@@ -58,6 +58,8 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 			removeUser(userID)
 			break
 		}
+
+		fmt.Println(string(msg))
 
 		var evt variables.EventRequest
 
